@@ -1,0 +1,11 @@
+<div class="card shadow mb-4">
+    <div class="card-body">
+        <h5 *ngIf="!isModifyPost" class="card-title">New Post</h5>
+        <h5 *ngIf="isModifyPost" class="card-title">Update Post</h5>
+        <input [(ngModel)]="title" class="form-control mb-3"  placeholder="Write a title" type="text"/>
+       
+        <textarea [(ngModel)]="content" class="form-control mb-3" rows="3" placeholder="Write a message"></textarea>
+        <button *ngIf="!isModifyPost" class="btn btn-primary" (click)="postPost()">Submit</button>
+        <button *ngIf="isModifyPost" class="btn btn-primary" (click)="updatePost()">Update</button>
+    </div>
+</div>

@@ -1,0 +1,11 @@
+
+<div class="collapse" [id]="'collapse-'+post.id">
+    <!-- Formulario para agregar un comentario -->
+    <div class="input-group mb-3">
+        <input [(ngModel)]="content" type="text" class="form-control" placeholder="Write a comment">
+   
+        <button class="btn btn-outline-secondary" type="button" (click)="postComment()">Comment </button>
+    </div>
+    <!-- Lista de comentarios de la Publicación 1 -->
+   
+</div>

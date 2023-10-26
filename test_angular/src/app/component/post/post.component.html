@@ -1,0 +1,27 @@
+<div class="card mb-3">
+    <div class="card-body">
+        <h4><span class="title-label">Title:</span> {{post.title}}</h4>
+        <p class="card-text"> <span class="content-label">Content:</span> {{post.content}}</p>
+        <p><span class="date-label"> {{post.authorName}}</span> - <span class="date-label"></span>{{ creationDate | date:'yyyy-MM-dd HH:mm:ss' }} </p>
+
+        <button class="btn btn-link" data-bs-toggle="collapse"   [attr.data-bs-target]="'#collapse-' + post.id" >
+            <i class="fas fa-comment"></i> Comentar
+        </button>
+        <app-create-comment [post]="post" [postComponent]="this"></app-create-comment>
+
+        
+
+        <ul  *ngFor="let item of comments ; index as i"  class="list-group list-group-flush">
+            <app-comment [comment]="item"></app-comment>
+        </ul>
+        <div *ngIf="isDisplayed">
+            <button class="btn btn-danger" (click)="deletePost()">
+                <i class="bi bi-trash"></i> Eliminar
+            </button>
+            <button class="btn btn-danger" (click)="updatePost()" >
+            <i class="bi bi-trash"></i> Modifical
+            </button>
+        </div>
+    </div>
+    
+</div>

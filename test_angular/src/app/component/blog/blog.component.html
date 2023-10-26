@@ -1,0 +1,25 @@
+
+
+<body>
+
+    <app-login></app-login>
+    <div class="container mt-5">
+       <app-create-post></app-create-post>
+
+        <div class="card">
+            <div class="card-header">
+                Posts
+            </div>                        
+            <div *ngFor="let item of posts ; index as i" class="form-check form-check-inline">
+                <app-post [post] = "item"></app-post>
+            </div>
+
+
+        </div>
+    </div>
+
+</body>
+
+
+<p>blog works!</p>
+
